@@ -1,4 +1,5 @@
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class Vehicle  {
 	String company;
@@ -56,6 +57,31 @@ public class Vehicle  {
 	public String toString() {
 		return "Vehicle [company=" + company + ", model=" + model + ", type=" + type + ", price=" + price + ", no=" + no
 				+ ", color=" + color + "]";
+	}
+	
+	public Vehicle acceptDetails(Vehicle v)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Car Company");
+		v.setCompany(sc.next());
+		
+		System.out.println("Enter Car Model");
+		v.setModel(sc.next());
+		
+		System.out.println("Enter Car Type");
+		v.setType(sc.next());
+		
+		System.out.println("Enter Car Price");
+		v.setPrice(sc.nextInt());
+		
+		System.out.println("Enter Car No");
+		v.setNo(sc.nextInt());
+		
+		System.out.println("Enter Car Color");
+		v.setColor(sc.next());
+		
+		return v;
+		
 	}
 	/*public int compareTo (Vehicle v)
 	{

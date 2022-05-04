@@ -3,13 +3,13 @@ public class LinkedList
 {
 	static class Node
 	{
-		private int data;
+		private Vehicle data;
 		private Node prev;
 		private Node next;
 		
-		Node(int data)
+		Node(Vehicle vehicle)
 		{
-			this.data=data;
+			this.data=vehicle;
 			this.prev=null;
 			this.next=null;
 		}
@@ -32,9 +32,9 @@ public class LinkedList
 	}
 	
 	
-	void addNodeAtLastPosition(int data)
+	void addNodeAtLastPosition(Vehicle v)
 	{
-		Node newNode = new Node(data);
+		Node newNode = new Node(v);
 		
 		if(isListEmpty())
 		{
@@ -54,9 +54,9 @@ public class LinkedList
 		}
 	}
 	
-	void addNodeAtFirstPosition(int data)
+	void addNodeAtFirstPosition(Vehicle v)
 	{
-		Node newNode = new Node(data);
+		Node newNode = new Node(v);
 		
 		if(isListEmpty())
 		{
