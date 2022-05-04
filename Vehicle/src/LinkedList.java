@@ -66,5 +66,28 @@ public class LinkedList
 				head = newNode;
 				nodesCount++;
 			  }
+	 }
+	
+	void displayList()
+	{
+		if (isListEmpty())
+		{
+			throw new RuntimeException("List is Empty");
+		}
+		else {
+				Node trav = head;
+				Node temp = null;
+				System.out.println("List in Forward Direction is : ");
+				
+				while(trav != null)
+				{
+					temp = trav ;
+					System.out.println("%4d" +trav.data );
+					trav = trav.next;
+				} System.out.println();
+				
+			 }
 	}
+	
+	
 }
