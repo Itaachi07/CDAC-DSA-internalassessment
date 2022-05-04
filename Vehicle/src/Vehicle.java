@@ -6,9 +6,13 @@ public class Vehicle  {
 	String model;
 	String type;
 	int price;
-	int no;
+	String no;
 	String color;
-	public Vehicle(String company, String model, String type, int price, int no, String color) {
+	public Vehicle()
+	{
+		
+	}
+	public Vehicle(String company, String model, String type, int price, String no, String color) {
 		super();
 		this.company = company;
 		this.model = model;
@@ -41,10 +45,10 @@ public class Vehicle  {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int getNo() {
+	public String getNo() {
 		return no;
 	}
-	public void setNo(int no) {
+	public void setNo(String no) {
 		this.no = no;
 	}
 	public String getColor() {
@@ -59,28 +63,27 @@ public class Vehicle  {
 				+ ", color=" + color + "]";
 	}
 	
-	public Vehicle acceptDetails(Vehicle v)
+	public void acceptDetails()
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Car Company");
-		v.setCompany(sc.next());
+		this.setCompany(sc.next());
 		
 		System.out.println("Enter Car Model");
-		v.setModel(sc.next());
+		this.setModel(sc.next());
 		
 		System.out.println("Enter Car Type");
-		v.setType(sc.next());
+		this.setType(sc.next());
 		
 		System.out.println("Enter Car Price");
-		v.setPrice(sc.nextInt());
+		this.setPrice(sc.nextInt());
 		
 		System.out.println("Enter Car No");
-		v.setNo(sc.nextInt());
+		this.setNo(sc.next());
 		
 		System.out.println("Enter Car Color");
-		v.setColor(sc.next());
-		
-		return v;
+		this.setColor(sc.next());
+	
 		
 	}
 	/*public int compareTo (Vehicle v)

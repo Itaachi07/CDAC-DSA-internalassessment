@@ -34,6 +34,8 @@ public class LinkedList
 	
 	void addNodeAtLastPosition(Vehicle v)
 	{
+		v= new Vehicle();
+		v.acceptDetails();
 		Node newNode = new Node(v);
 		
 		if(isListEmpty())
@@ -48,6 +50,7 @@ public class LinkedList
 			{
 				trav = trav.next;
 			}
+			
 			trav.next = newNode;
 			newNode.prev = trav;
 			nodesCount++;
@@ -57,7 +60,7 @@ public class LinkedList
 	void addNodeAtFirstPosition(Vehicle v)
 	{
 		Node newNode = new Node(v);
-		
+		v.acceptDetails();
 		if(isListEmpty())
 		{
 			head = newNode;
@@ -118,14 +121,14 @@ public class LinkedList
 		else {
 				Node trav = head;
 				Node temp = null;
-				System.out.print("List in Forward Direction is : ");
+				System.out.println("List in Forward Direction is : ");
 				
 				while(trav != null)
 				{
 					temp = trav ;
-					System.out.print(" " +trav.data );
+					System.out.println(" " +trav.data );
 					trav = trav.next;
-				} System.out.println();
+				} //System.out.print();
 				
 			 }
 	}
