@@ -87,7 +87,27 @@ public class LinkedList
 			}
 	}
 	
-	
+	void deleteNodeAtLastPosition()
+	{
+		if(isListEmpty())
+		{
+			throw new RuntimeException("List is Empty");
+		}
+		else if(head.next == null)
+		{
+			head = null;
+			nodesCount--;
+		}
+		else
+		{
+			Node trav = head;
+			while(trav.next.next !=null)
+			{
+				trav = trav.next ;
+			}
+			trav.next =null;
+		}
+	}
 	
 	void displayList()
 	{
