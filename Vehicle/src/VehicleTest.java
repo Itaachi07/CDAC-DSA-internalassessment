@@ -25,14 +25,58 @@ public class VehicleTest {
 		
 		Vehicle v=null;
 		LinkedList l1 = new LinkedList();
-	
-		l1.addNodeAtLastPosition(v);
 		
-		l1.addNodeAtLastPosition(v);
-		l1.displayList();
-		
-		l1.deleteNodeAtLastPosition();
-		l1.displayList();
+		while(true)
+		{
+			int choice = menu();
+			switch(choice)
+			{
+			case 0:
+				System.exit(0);
+				
+			case 1:
+			{
+				l1.addNodeAtLastPosition(v);
+			}break;
+			
+			case 2:
+			{
+				l1.addNodeAtFirstPosition(v);
+			}break;
+			
+			case 3:
+			{
+				l1.deleteNodeAtLastPosition();
+			}break;
+			
+			case 4:
+			{
+				l1.deletNodeAtFirstPosition();
+			}break;
+			
+			case 5:
+			{
+				
+			}break;
+			
+			case 6:
+			{
+				l1.displayList();
+			}break;
+			
+			case 7:
+			{
+				l1.revdisplayList();
+			}break;
+			
+			case 8:
+			{
+				
+			}break;
+			
+			
+			}
+		}
 		
 	}
 
