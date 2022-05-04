@@ -30,6 +30,8 @@ public class LinkedList
 	{
 		return(this.nodesCount);
 	}
+	
+	
 	void addNodeAtLastPosition(int data)
 	{
 		Node newNode = new Node(data);
@@ -67,6 +69,25 @@ public class LinkedList
 				nodesCount++;
 			  }
 	 }
+	void deletNodeAtFirstPosition()
+	{
+		if(isListEmpty())
+		{
+			throw new RuntimeException("List is Empty");
+		}
+		else if (head.next == null)
+		{
+			head = null;
+			nodesCount--;
+		}
+		else {
+				head = head.next;
+				head.prev = null;
+				nodesCount--;
+			}
+	}
+	
+	
 	
 	void displayList()
 	{
@@ -77,12 +98,12 @@ public class LinkedList
 		else {
 				Node trav = head;
 				Node temp = null;
-				System.out.println("List in Forward Direction is : ");
+				System.out.print("List in Forward Direction is : ");
 				
 				while(trav != null)
 				{
 					temp = trav ;
-					System.out.println("%4d" +trav.data );
+					System.out.print(" " +trav.data );
 					trav = trav.next;
 				} System.out.println();
 				
@@ -98,6 +119,7 @@ public class LinkedList
 		else {
 			Node trav = head;
 			Node temp = null;
+			System.out.print("List in Reverse Direction is : ");
 			while(trav != null)
 			{
 				temp = trav ;
@@ -107,7 +129,7 @@ public class LinkedList
 			while (trav!=null)
 			{
 				temp = trav;
-				System.out.println("%4d" +trav.data);
+				System.out.print(" " +trav.data);
 				trav = trav.prev;
 			} System.out.println();
 		}
