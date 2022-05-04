@@ -30,7 +30,7 @@ public class LinkedList
 	{
 		return(this.nodesCount);
 	}
-	void addNodeAtLastPostion(int data)
+	void addNodeAtLastPosition(int data)
 	{
 		Node newNode = new Node(data);
 		
@@ -50,5 +50,21 @@ public class LinkedList
 			newNode.prev = trav;
 			nodesCount++;
 		}
+	}
+	
+	void addNodeAtFirstPosition(int data)
+	{
+		Node newNode = new Node(data);
+		
+		if(isListEmpty())
+		{
+			head = newNode;
+			nodesCount++;
+		}else {
+				newNode.next = head;
+				head.prev = newNode;
+				head = newNode;
+				nodesCount++;
+			  }
 	}
 }
