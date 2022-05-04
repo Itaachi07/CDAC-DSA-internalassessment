@@ -89,5 +89,28 @@ public class LinkedList
 			 }
 	}
 	
-	
+	void revdisplayList()
+	{
+		if(isListEmpty())
+		{
+			throw new RuntimeException("List is Empty");
+		}
+		else {
+			Node trav = head;
+			Node temp = null;
+			while(trav != null)
+			{
+				temp = trav ;
+				trav = trav.next;
+			}
+			trav = temp;
+			while (trav!=null)
+			{
+				temp = trav;
+				System.out.println("%4d" +trav.data);
+				trav = trav.prev;
+			} System.out.println();
+		}
+			
+	}
 }
