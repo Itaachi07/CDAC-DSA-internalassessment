@@ -158,7 +158,7 @@ public class LinkedList
 		}
 			
 	}
-	void sortbyPrice(int price) //method for Sort using price of vehicle
+	void sortbyPrice(int price) //method for Sort using price of vehicle using selection Sort
 	{
 		if (isListEmpty())
 		{
@@ -169,9 +169,9 @@ public class LinkedList
 			System.out.println("Sorted List IS :");
 			for(Node trav1 = head; trav1.next!=null; trav1 =trav1.next) //First loop for Iterations
 			{
-				for(Node trav2 = trav1.next;trav2.next!=null;trav2 = trav2.next)
+				for(Node trav2 = trav1.next;trav2.next!=null;trav2 = trav2.next) //second Loop
 				{
-					if(trav1.data.getPrice() > trav2.data.getPrice())
+					if(trav1.data.getPrice() > trav2.data.getPrice())// Condition for compare price
 					{
 						Vehicle temp = trav1.data;
 						trav1.data = trav2.data;
@@ -183,4 +183,30 @@ public class LinkedList
 		displayList();
 	}
 	
+	void searchVehicleByNumber(String no)
+	{
+		if(isListEmpty())
+		{
+			throw new RuntimeException("\n Vehicle List is Empty :");
+			
+		}else 
+		{
+			int flag =1;
+			Node trav = head;
+			System.out.println("\n Vehicle details are");
+			do
+			{
+				if(trav.data.getNo().equalsIgnoreCase(no))
+				{
+					System.out.println(trav.data.toString());
+					flag =0;
+				}
+				trav=trav.next;
+			}while(trav!=head);
+			if(flag==1)
+			{
+				System.out.println("no.Vehicle Found with the number = " +no);
+			}
+		}
+	}
 }
