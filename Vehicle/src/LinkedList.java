@@ -59,8 +59,10 @@ public class LinkedList
 	
 	void addNodeAtFirstPosition(Vehicle v) //Add node at First Position
 	{
-		Node newNode = new Node(v);
+		
+		v= new Vehicle();
 		v.acceptDetails();
+		Node newNode = new Node(v);
 		if(isListEmpty())
 		{
 			head = newNode;
@@ -142,7 +144,7 @@ public class LinkedList
 		else {
 			Node trav = head;
 			Node temp = null;
-			System.out.print("List in Reverse Direction is : ");
+			System.out.println("List in Reverse Direction is : ");
 			while(trav != null)
 			{
 				temp = trav ;
@@ -152,13 +154,13 @@ public class LinkedList
 			while (trav!=null)
 			{
 				temp = trav;
-				System.out.print(" " +trav.data);
+				System.out.println(" " +trav.data);
 				trav = trav.prev;
 			} System.out.println();
 		}
 			
 	}
-	void sortbyPrice(int price) //method for Sort using price of vehicle using selection Sort
+	void sortbyPrice(Vehicle v) //method for Sort using price of vehicle using selection Sort
 	{
 		if (isListEmpty())
 		{
@@ -167,9 +169,9 @@ public class LinkedList
 		else 
 		{
 			System.out.println("Sorted List IS :");
-			for(Node trav1 = head; trav1.next!=null; trav1 =trav1.next) //First loop for Iterations
+			for(Node trav1 = head; trav1!=null; trav1 =trav1.next) //First loop for Iterations
 			{
-				for(Node trav2 = trav1.next;trav2.next!=null;trav2 = trav2.next) //second Loop
+				for(Node trav2 = trav1.next;trav2!=null;trav2 = trav2.next) //second Loop
 				{
 					if(trav1.data.getPrice() > trav2.data.getPrice())// Condition for compare price
 					{
@@ -180,7 +182,7 @@ public class LinkedList
 				}
 			}
 		}
-		displayList();
+		//displayList();
 	}
 	
 	void searchVehicleByNumber(String no)
@@ -195,17 +197,17 @@ public class LinkedList
 			Node trav = head;
 			System.out.println("\n Vehicle details are");
 			do
-			{
+			{	
 				if(trav.data.getNo().equalsIgnoreCase(no))
 				{
 					System.out.println(trav.data.toString());
 					flag =0;
 				}
 				trav=trav.next;
-			}while(trav!=head);
+			}while(trav!=null);
 			if(flag==1)
 			{
-				System.out.println("no.Vehicle Found with the number = " +no);
+				System.out.println("No.Vehicle Found with the number = " +no);
 			}
 		}
 	}

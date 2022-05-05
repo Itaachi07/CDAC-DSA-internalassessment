@@ -13,8 +13,8 @@ public class VehicleTest {
         System.out.println("6. Display Vehicle List");
         System.out.println("7. Display list in a reverse order");
         System.out.println("8.Sort Vehicle List By Price");
-
-        System.out.print("enter the choice : ");
+        System.out.println("*********************************");
+        System.out.println("enter the choice : ");
         //accept choice from user
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
@@ -25,6 +25,7 @@ public class VehicleTest {
 		
 		Vehicle v=null;
 		LinkedList l1 = new LinkedList();
+		
 		
 		while(true)
 		{
@@ -56,7 +57,9 @@ public class VehicleTest {
 			
 			case 5:
 			{
-				
+				Scanner sc = new Scanner(System.in);
+				String s = sc.next();
+				l1.searchVehicleByNumber(s);
 			}break;
 			
 			case 6:
@@ -71,7 +74,9 @@ public class VehicleTest {
 			
 			case 8:
 			{
-				
+				l1.sortbyPrice(v);
+				System.out.println("After Sorting");
+				l1.displayList();
 			}break;
 			
 			
