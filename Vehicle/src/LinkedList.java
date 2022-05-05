@@ -4,8 +4,8 @@ public class LinkedList
 	static class Node
 	{
 		private Vehicle data;
-		private Node prev;
-		private Node next;
+		private Node prev; //reference of type node class
+		private Node next;	//reference of type node class
 		
 		Node(Vehicle vehicle)
 		{
@@ -22,17 +22,17 @@ public class LinkedList
 		head = null;
 		nodesCount = 0;
 	}
-	boolean isListEmpty()
+	boolean isListEmpty() //To check the list is empty
 	{
 		return(head == null);
 	}
-	int getNodesCount()
+	int getNodesCount() 
 	{
 		return(this.nodesCount);
 	}
 	
 	
-	void addNodeAtLastPosition(Vehicle v)
+	void addNodeAtLastPosition(Vehicle v) //Add node at Last Position
 	{
 		v= new Vehicle();
 		v.acceptDetails();
@@ -57,7 +57,7 @@ public class LinkedList
 		}
 	}
 	
-	void addNodeAtFirstPosition(Vehicle v)
+	void addNodeAtFirstPosition(Vehicle v) //Add node at First Position
 	{
 		Node newNode = new Node(v);
 		v.acceptDetails();
@@ -72,7 +72,7 @@ public class LinkedList
 				nodesCount++;
 			  }
 	 }
-	void deletNodeAtFirstPosition()
+	void deletNodeAtFirstPosition() //Delete node at First Position
 	{
 		if(isListEmpty())
 		{
@@ -90,7 +90,7 @@ public class LinkedList
 			}
 	}
 	
-	void deleteNodeAtLastPosition()
+	void deleteNodeAtLastPosition() //Delete node at Last Position
 	{
 		if(isListEmpty())
 		{
@@ -112,7 +112,7 @@ public class LinkedList
 		}
 	}
 	
-	void displayList()
+	void displayList() //method to display list
 	{
 		if (isListEmpty())
 		{
@@ -133,7 +133,7 @@ public class LinkedList
 			 }
 	}
 	
-	void revdisplayList()
+	void revdisplayList() //method to display List in reverse order
 	{
 		if(isListEmpty())
 		{
@@ -158,4 +158,29 @@ public class LinkedList
 		}
 			
 	}
+	void sortbyPrice(int price) //method for Sort using price of vehicle
+	{
+		if (isListEmpty())
+		{
+			throw new RuntimeException("List is Empty");	
+		}
+		else 
+		{
+			System.out.println("Sorted List IS :");
+			for(Node trav1 = head; trav1.next!=null; trav1 =trav1.next) //First loop for Iterations
+			{
+				for(Node trav2 = trav1.next;trav2.next!=null;trav2 = trav2.next)
+				{
+					if(trav1.data.getPrice() > trav2.data.getPrice())
+					{
+						Vehicle temp = trav1.data;
+						trav1.data = trav2.data;
+						trav2.data=temp;
+					}
+				}
+			}
+		}
+		displayList();
+	}
+	
 }
