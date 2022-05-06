@@ -26,7 +26,6 @@ public class VehicleTest {
 		Vehicle v=null;
 		LinkedList l1 = new LinkedList();
 		
-		
 		while(true)
 		{
 			int choice = menu();
@@ -36,44 +35,45 @@ public class VehicleTest {
 				System.exit(0);
 				
 			case 1:
-			{
+			{	// add node at last position
 				l1.addNodeAtLastPosition(v);
+
 			}break;
 			
 			case 2:
-			{
+			{	// add node at First position
 				l1.addNodeAtFirstPosition(v);
 			}break;
 			
 			case 3:
-			{
+			{	// delete node at last position
 				l1.deleteNodeAtLastPosition();
 			}break;
 			
 			case 4:
-			{
+			{		// delete node at first position
 				l1.deletNodeAtFirstPosition();
 			}break;
 			
 			case 5:
-			{
+			{	// search vehicle by number
 				Scanner sc = new Scanner(System.in);
 				String s = sc.next();
 				l1.searchVehicleByNumber(s);
 			}break;
 			
 			case 6:
-			{
+			{	// display List
 				l1.displayList();
 			}break;
 			
 			case 7:
-			{
+			{	// reverse display List
 				l1.revdisplayList();
 			}break;
 			
 			case 8:
-			{
+			{	//sort by Price 
 				l1.sortbyPrice(v);
 				System.out.println("After Sorting");
 				l1.displayList();

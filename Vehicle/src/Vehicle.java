@@ -1,17 +1,19 @@
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class Vehicle  {
+public class Vehicle  
+{
 	String company;
 	String model;
 	String type;
 	int price;
 	String no;
 	String color;
-	public Vehicle()
+	public Vehicle() //parameterless constructor
 	{
 		
 	}
+	//parameterized constructor
 	public Vehicle(String company, String model, String type, int price, String no, String color) {
 		super();
 		this.company = company;
@@ -20,7 +22,7 @@ public class Vehicle  {
 		this.price = price;
 		this.no = no;
 		this.color = color;
-	}
+	} 		// getters & setters
 	public String getCompany() {
 		return company;
 	}
@@ -59,11 +61,11 @@ public class Vehicle  {
 	}
 	@Override
 	public String toString() {
-		return "Vehicle [company=" + company + ", model=" + model + ", type=" + type + ", price=" + price + ", no=" + no
-				+ ", color=" + color + "]";
+		return "Vehicle : Company=" + company + ", Model=" + model + ", Type=" + type + ", Price=" + price + ", No=" + no
+				+ ", Color=" + color ;
 	}
-	
-	public void acceptDetails()
+	 
+	public void acceptDetails() // to accept details from user
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Car Company");
@@ -86,20 +88,5 @@ public class Vehicle  {
 	
 		
 	}
-	/*public int compareTo (Vehicle v)
-	{
-		return this.getPrice().compareTo(getPrice());
-	}
-	*/
 }
-/*	class Price implements Comparator<Vehicle>
-	{	@Override
-	public int compare(Price p1, Price p2) {
-		if(p1.getPrice()==p2.getPrice())
-			return 0;
-		if(p1.getPrice()>p2.getPrice())
-		{return 1;
-		}
-		return -1;
-		}
-	}*/
+

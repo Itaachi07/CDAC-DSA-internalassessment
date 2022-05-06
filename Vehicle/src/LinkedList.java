@@ -1,5 +1,5 @@
 
-public class LinkedList 
+public class LinkedList  //Doubly linear Linked List
 {
 	static class Node
 	{
@@ -26,82 +26,81 @@ public class LinkedList
 	{
 		return(head == null);
 	}
-	int getNodesCount() 
+	int getNodesCount() // to get total nodes 
 	{
 		return(this.nodesCount);
 	}
 	
-	
 	void addNodeAtLastPosition(Vehicle v) //Add node at Last Position
 	{
 		v= new Vehicle();
-		v.acceptDetails();
+		v.acceptDetails(); //accepting vehicle display from acceptdisplay method
 		Node newNode = new Node(v);
 		
-		if(isListEmpty())
+		if(isListEmpty()) //checking list is empty or not
 		{
-			head = newNode;
-			nodesCount++;
+			head = newNode; //attaching the new node to head 
+			//nodesCount++;
 			
 		}
 		else {
 			Node trav = head;
-			while(trav.next!=null)
+			while(trav.next!=null) //traversing the list till last node
 			{
 				trav = trav.next;
 			}
 			
-			trav.next = newNode;
-			newNode.prev = trav;
-			nodesCount++;
+			trav.next = newNode; 	
+			newNode.prev = trav;	
+			//nodesCount++;
 		}
 	}
 	
 	void addNodeAtFirstPosition(Vehicle v) //Add node at First Position
 	{
 		
-		v= new Vehicle();
-		v.acceptDetails();
+		v= new Vehicle(); 
+		v.acceptDetails(); //accepting vehicle display from acceptdisplay method
 		Node newNode = new Node(v);
-		if(isListEmpty())
+		if(isListEmpty()) //checking list is empty or not
 		{
 			head = newNode;
-			nodesCount++;
+			//nodesCount++;
 		}else {
 				newNode.next = head;
 				head.prev = newNode;
 				head = newNode;
-				nodesCount++;
+				//nodesCount++;
 			  }
 	 }
 	void deletNodeAtFirstPosition() //Delete node at First Position
 	{
-		if(isListEmpty())
+		if(isListEmpty()) //checking list is empty or not
 		{
 			throw new RuntimeException("List is Empty");
 		}
 		else if (head.next == null)
 		{
 			head = null;
-			nodesCount--;
+			//nodesCount--;
 		}
 		else {
 				head = head.next;
 				head.prev = null;
-				nodesCount--;
+				//nodesCount--;
 			}
 	}
 	
 	void deleteNodeAtLastPosition() //Delete node at Last Position
 	{
-		if(isListEmpty())
+		if(isListEmpty()) //checking list is empty or not
 		{
 			throw new RuntimeException("List is Empty");
 		}
 		else if(head.next == null)
 		{
 			head = null;
-			nodesCount--;
+			//nodesCount--;
 		}
 		else
 		{
@@ -116,7 +115,7 @@ public class LinkedList
 	
 	void displayList() //method to display list
 	{
-		if (isListEmpty())
+		if (isListEmpty()) //checking list is empty or not
 		{
 			throw new RuntimeException("List is Empty");
 		}
@@ -137,7 +136,7 @@ public class LinkedList
 	
 	void revdisplayList() //method to display List in reverse order
 	{
-		if(isListEmpty())
+		if(isListEmpty()) //checking list is empty or not
 		{
 			throw new RuntimeException("List is Empty");
 		}
@@ -145,13 +144,13 @@ public class LinkedList
 			Node trav = head;
 			Node temp = null;
 			System.out.println("List in Reverse Direction is : ");
-			while(trav != null)
+			while(trav != null) //loop to traverse to the last node
 			{
 				temp = trav ;
 				trav = trav.next;
 			}
 			trav = temp;
-			while (trav!=null)
+			while (trav!=null)//traverse back from last to start
 			{
 				temp = trav;
 				System.out.println(" " +trav.data);
@@ -160,9 +159,9 @@ public class LinkedList
 		}
 			
 	}
-	void sortbyPrice(Vehicle v) //method for Sort using price of vehicle using selection Sort
+	void sortbyPrice(Vehicle v) //method for Sort by price of vehicle using selection Sort
 	{
-		if (isListEmpty())
+		if (isListEmpty())//checking list is empty or not
 		{
 			throw new RuntimeException("List is Empty");	
 		}
@@ -171,7 +170,7 @@ public class LinkedList
 			System.out.println("Sorted List IS :");
 			for(Node trav1 = head; trav1!=null; trav1 =trav1.next) //First loop for Iterations
 			{
-				for(Node trav2 = trav1.next;trav2!=null;trav2 = trav2.next) //second Loop
+				for(Node trav2 = trav1.next;trav2!=null;trav2 = trav2.next) //second Loop for 
 				{
 					if(trav1.data.getPrice() > trav2.data.getPrice())// Condition for compare price
 					{
@@ -185,9 +184,9 @@ public class LinkedList
 		//displayList();
 	}
 	
-	void searchVehicleByNumber(String no)
+	void searchVehicleByNumber(String no) // Search vehicle by number 
 	{
-		if(isListEmpty())
+		if(isListEmpty())//checking list is empty or not
 		{
 			throw new RuntimeException("\n Vehicle List is Empty :");
 			
@@ -202,6 +201,7 @@ public class LinkedList
 				{
 					System.out.println(trav.data.toString());
 					flag =0;
+					break;
 				}
 				trav=trav.next;
 			}while(trav!=null);
